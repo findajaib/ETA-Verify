@@ -58,7 +58,7 @@ https://templatemo.com/tm-516-known
             <!-- MENU LINKS -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-nav-first">
-                    <li><a href="#top" class="smoothScroll">Home</a></li>
+                    <li><a href="#top" class="smoothScroll">Dashboard</a></li>
                     <li><a href="#about" class="smoothScroll">About</a></li>
                     <li><a href="#team" class="smoothScroll">Our Teachers</a></li>
                     <li><a href="#courses" class="smoothScroll">Courses</a></li>

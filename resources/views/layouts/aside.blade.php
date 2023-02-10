@@ -31,6 +31,39 @@
                               </p>
                           </a>
                       </li>
+                      <li
+                          class="nav-item {{ strpos(Route::currentRouteName(), 'permissions.index') == 0 || strpos(Route::currentRouteName(), 'roles.index') ? 'menu-is-opening menu-open' : '' }}">
+                          <a href="#" class="nav-link">
+                              <i class="nav-icon fas fa-users"></i>
+                              <p>
+                                  User Management
+                                  <i class="fas fa-angle-left right"></i>
+                              </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="#" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Users</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('permissions.index') }}"
+                                      class="nav-link {{ strpos(Route::currentRouteName(), 'permissions.index') == 0 ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Permission</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="{{ route('roles.index') }}"
+                                      class="nav-link  {{ strpos(Route::currentRouteName(), 'roles.index') == 0 ? 'active' : '' }}">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Roles</p>
+                                  </a>
+                              </li>
+
+                          </ul>
+                      </li>
 
 
                       <!-- Add icons to the links using the .nav-icon class
