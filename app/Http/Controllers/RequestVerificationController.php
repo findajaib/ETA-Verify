@@ -25,7 +25,7 @@ class RequestVerificationController extends Controller
      */
     public function create()
     {
-        dd('fsdsgf');
+        return view('request.create');
     }
 
     /**
