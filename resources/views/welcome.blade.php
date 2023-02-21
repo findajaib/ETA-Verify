@@ -68,7 +68,7 @@ https://templatemo.com/tm-516-known
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><i class="fa fa-phone"></i> +65 2244 1100</a></li>
-                    <li><a href="#"><i class="fa fa-phone"></i>Aply Now</a></li>
+                    <li><a href="{{ route('request.verification') }}"><i class="fa fa-phone"></i>Aply Now</a></li>
                 </ul>
             </div>
 

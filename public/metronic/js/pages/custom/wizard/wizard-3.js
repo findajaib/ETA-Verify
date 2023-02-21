@@ -50,41 +50,13 @@ var KTWizard3 = function () {
 			_formEl,
 			{
 				fields: {
-					address1: {
-						validators: {
-							notEmpty: {
-								message: 'Address is required'
-							}
-						}
-					},
-					postcode: {
-						validators: {
-							notEmpty: {
-								message: 'Postcode is required'
-							}
-						}
-					},
-					city: {
-						validators: {
-							notEmpty: {
-								message: 'City is required'
-							}
-						}
-					},
-					state: {
-						validators: {
-							notEmpty: {
-								message: 'State is required'
-							}
-						}
-					},
-					country: {
-						validators: {
-							notEmpty: {
-								message: 'Country is required'
-							}
-						}
-					}
+					// agree_check: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'You have to agree to the term and conditions'
+					// 		}
+					// 	}
+					// },
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -98,53 +70,69 @@ var KTWizard3 = function () {
 			_formEl,
 			{
 				fields: {
-					package: {
-						validators: {
-							notEmpty: {
-								message: 'Package details is required'
-							}
-						}
-					},
-					weight: {
-						validators: {
-							notEmpty: {
-								message: 'Package weight is required'
-							},
-							digits: {
-								message: 'The value added is not valid'
-							}
-						}
-					},
-					width: {
-						validators: {
-							notEmpty: {
-								message: 'Package width is required'
-							},
-							digits: {
-								message: 'The value added is not valid'
-							}
-						}
-					},
-					height: {
-						validators: {
-							notEmpty: {
-								message: 'Package height is required'
-							},
-							digits: {
-								message: 'The value added is not valid'
-							}
-						}
-					},
-					packagelength: {
-						validators: {
-							notEmpty: {
-								message: 'Package length is required'
-							},
-							digits: {
-								message: 'The value added is not valid'
-							}
-						}
-					}
+					// first_name: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'first name is required'
+					// 		}
+					// 	}
+					// },
+					// middle_name: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'middle name is required'
+					// 		}
+					// 	}
+					// },
+					// last_name: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'last name is required'
+					// 		}
+					// 	}
+					// },
+					// gender: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'gender is required'
+					// 		}
+					// 	}
+					// },
+					// profile_avatar: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'Profile picture is required'
+					// 		}
+					// 	}
+					// },
+					// region: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'region is required'
+					// 		}
+					// 	}
+					// },
+					// zone: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'zone is required'
+					// 		}
+					// 	}
+					// },
+					// woreda: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'woreda is required'
+					// 		}
+					// 	}
+					// },
+					// dob: {
+					// 	validators: {
+					// 		notEmpty: {
+					// 			message: 'date of birth is required'
+					// 		}
+					// 	}
+					// },
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
