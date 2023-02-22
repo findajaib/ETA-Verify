@@ -31,13 +31,13 @@ https://templatemo.com/tm-516-known
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
     <!-- PRE LOADER -->
-    <section class="preloader">
+    {{-- <section class="preloader">
         <div class="spinner">
 
             <span class="spinner-rotate"></span>
 
         </div>
-    </section>
+    </section> --}}
 
 
     <!-- MENU -->
@@ -80,7 +80,7 @@ https://templatemo.com/tm-516-known
     <section id="home">
         <div class="row">
 
-            <div class="owl-carousel owl-theme home-slider">
+            {{-- <div class="owl-carousel owl-theme home-slider">
                 <div class="item item-first">
                     <div class="caption">
                         <div class="container">
@@ -120,7 +120,8 @@ https://templatemo.com/tm-516-known
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+            <h2>dd</h2>
         </div>
     </section>
 
