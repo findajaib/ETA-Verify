@@ -1,101 +1,66 @@
-@extends('base')
-@section('title','Add new User')
-@section('breadcrumb')
-<li>Add new User</li>
-@endsection
+@extends('backend_base')
 @section('content')
-    <form action="{{ route('users.store') }}" method="post">
-        @csrf
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">First Name</label>
-                        <input type="text" class="form-control" placeholder="Enter First name" name="first_name" value="{{ old('first_name') }}" required>
-                        <div class="help-block with-errors">
-                            @error('first_name')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">Middle Name</label>
-                        <input type="text" class="form-control" name="middle_name" placeholder="Enter Middle name" value="{{ old('middle_name') }}" required>
-                        <div class="help-block with-errors">
-                            @error('middle_name')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">Last Name</label>
-                        <input type="text" class="form-control" name="last_name" placeholder="Enter Last name" value="{{ old('last_name') }}" required>
-                        <div class="help-block with-errors">
-                            @error('last_name')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter email" value="{{ old('email') }}" required>
-                        <div class="help-block with-errors">
-                            @error('email')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">username</label>
-                        <input type="text" class="form-control" name="username" placeholder="Enter username" value="{{ old('username') }}" required>
-                        <div class="help-block with-errors">
-                            @error('username')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="">Gender:</label>
-                        <select name="gender" class="form-control select2" required>
-                            <option value="">Select</option>
-                            <option value="male" {{ old('gender') == 'male' ? 'selected' : ''}}>Male</option>
-                            <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
-                        </select>
-                        <div class="help-block with-errors">
-                            @error('gender')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label class="col-sm-5 control-label no-padding-right">Phone Number</label>
-                        <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number" value="{{ old('phone') }}" required>
-                        <div class="help-block with-errors">
-                            @error('phone')
-                                <span class="text-danger">
-                                    {{ $message }}
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-success float-right">Save</button>
+    <div class="col-md-12" bis_skin_checked="1">
 
-                <a class="btn btn-primary mx-2" href="{{ route('user.index') }}">back to list</a>
+        <div class="card" bis_skin_checked="1">
+            <div class="card-header" bis_skin_checked="1">
+                <h3 class="card-title">Registering New System User</h3>
             </div>
+            <div class="flash-message">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
+
+            <form method="POST" action="{{ route('user.store') }}">
+                @csrf
+                <div class="card-body" bis_skin_checked="1">
+                    <div class="form-group" bis_skin_checked="1">
+                        <label for="full_name">Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name"
+                            placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="Enter Email Address" required>
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label for="user_type">Gender</label>
+
+                        <select name="gender" id="gender" class="form-control" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="{{ App\Constants::MALE }}">{{ App\Constants::MALE }}</option>
+                            <option value="{{ App\Constants::FEMALE }}">{{ App\Constants::FEMALE }}</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group" bis_skin_checked="1">
+                        <label for="user_type">User Type</label>
+
+                        <select name="user_type" id="user_type" class="form-control" required>
+                            <option value="" disabled selected>Select User Type</option>
+                            @foreach (App\Constants::USER_TYPE as $key => $user)
+                                <option value="{{ $key }}">{{ $user }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="card-footer" bis_skin_checked="1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
         </div>
-    </form>
+
+
+
+    </div>
 @endsection
